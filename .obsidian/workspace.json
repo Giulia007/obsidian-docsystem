@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/system/Documentation Structure MOC.md",
+                "file": "docs/api/Sample Endpoint - POST Tasks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Documentation Structure MOC"
+              "title": "Sample Endpoint - POST Tasks"
             }
           }
         ],
@@ -216,8 +216,18 @@
   },
   "active": "19d10910fa5a3319",
   "lastOpenFiles": [
+    "docs/workflows/placeholder.md",
+    "docs/api/Sample Endpoint - POST Tasks.md",
+    "docs/api/API Concept Overview.md",
+    "docs/Index.md",
+    "mkdocs.yml",
+    "site_name Obsidian Documentation System.txt",
+    "Nuovo Documento di testo.txt",
+    "Untitled",
     "templates/standard-doc.md",
     "docs/system/Documentation Structure MOC.md",
+    "docs/system/System Architecture Overview.md",
+    "docs/system/Versioning & Change Management.md",
     "docs/workflows/Publishing Workflow.md",
     "asdasd.md",
     "asdasdasd.md",
@@ -231,17 +241,9 @@
     "docs/templates/API Change Request Template.md",
     "docs/templates/Workflow Documentation Template.md",
     "docs/templates/Feature Documentation Template.md",
-    "docs/api/API Concept Overview.md",
-    "docs/api/Sample Endpoint - POST Tasks.md",
     "docs/workflows/Branching & Git Workflow.md",
-    "docs/system/Versioning & Change Management.md",
-    "docs/system/System Architecture Overview.md",
     "docs/system/API Style Guide.md",
     "assets",
-    "scripts",
-    "diagrams",
-    "docs/diagrams",
-    "docs/workflows",
-    "docs/api"
+    "scripts"
   ]
 }
