@@ -216,6 +216,8 @@
   },
   "active": "19d10910fa5a3319",
   "lastOpenFiles": [
+    "docs/index.md",
+    "tree.txt",
     "docs/workflows/placeholder.md",
     "docs/api/Sample Endpoint - POST Tasks.md",
     "docs/api/API Concept Overview.md",
@@ -243,7 +245,6 @@
     "docs/templates/Feature Documentation Template.md",
     "docs/workflows/Branching & Git Workflow.md",
     "docs/system/API Style Guide.md",
-    "assets",
-    "scripts"
+    "assets"
   ]
 }

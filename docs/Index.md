@@ -1,19 +1,50 @@
----
-title: Index
-created: 2025-12-01
-updated: 2025-12-01
-tags:
-  - documentation
-version:
-status:
----
-# Documentation System
+# Obsidian Documentation System
 
-Welcome to the Obsidian → GitHub → MkDocs documentation system demo.
+Welcome to the documentation hub for the **Obsidian Documentation System** — a small, real-world doc-as-code environment designed to demonstrate modern technical writing workflows.
 
-This site is generated automatically using:
-- MkDocs
-- Material for MkDocs
-- GitHub Actions
+This project showcases:
 
-Use the navigation on the left to explore the system.
+- internal documentation structure  
+- system and architecture descriptions  
+- workflow documentation  
+- API documentation and style guidelines  
+- reusable templates  
+- automated publishing pipeline (Obsidian → GitHub → MkDocs → Pages)  
+
+It has been created to reflect **current industry standards** in technical documentation, using:
+
+- MkDocs Material  
+- GitHub Actions  
+- GitHub Pages  
+- Obsidian for authoring  
+- Markdown & doc-as-code principles  
+
+## Contents
+
+### System Documentation
+Conceptual overviews and architectural notes describing how this documentation system is structured and maintained.
+
+### Workflows
+Documentation of how content moves from draft → review → publication, including branching and Git guidelines.
+
+### API Documentation
+Simple conceptual and practical examples that demonstrate API literacy without requiring a complex backend.
+
+### Templates
+Reusable writing templates for feature docs, workflows, and API change requests.
+
+## Purpose
+
+The purpose of this project is to demonstrate:
+
+- clarity of writing  
+- technical understanding  
+- documentation architecture  
+- developer-facing communication  
+- calm, structured, internal-facing documentation practice  
+
+## How to Use This Site
+
+Use the left navigation bar to explore the documentation categories.  
+Each section contains curated examples representing different types of technical documentation used in software teams.
+
