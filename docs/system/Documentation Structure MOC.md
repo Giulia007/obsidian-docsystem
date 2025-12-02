@@ -1,10 +1,11 @@
 ---
-title: Untitled
+title: Documentation Structure MOC
 created: 2025-11-27
 updated: 2025-11-27
 tags:
   - documentation
 status:
+  - generated
 version:
 ---
 ## Purpose  

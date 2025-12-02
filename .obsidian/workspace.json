@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/api/Sample Endpoint - POST Tasks.md",
+                "file": "docs/system/Documentation Structure MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sample Endpoint - POST Tasks"
+              "title": "Documentation Structure MOC"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"satus\"]",
+                "query": "[\"status\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -214,19 +215,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "19d10910fa5a3319",
+  "active": "b94910464e8e4c2f",
   "lastOpenFiles": [
+    "docs/api/Sample Endpoint - POST Tasks.md",
+    "docs/system/auto-index.md",
+    "templates/standard-doc.md",
+    "docs/api/index.md",
+    "docs/api/Nuovo Documento di testo.txt",
+    "docs/templates/index.md",
+    "docs/templates/Nuovo Documento di testo.txt",
+    "docs/workflows/index.md",
+    "docs/workflows/Nuovo Documento di testo.txt",
+    "docs/system/index.md",
+    "docs/system/Nuovo Documento di testo.txt",
     "docs/index.md",
+    "docs/home.md",
     "tree.txt",
     "docs/workflows/placeholder.md",
-    "docs/api/Sample Endpoint - POST Tasks.md",
     "docs/api/API Concept Overview.md",
     "docs/Index.md",
     "mkdocs.yml",
     "site_name Obsidian Documentation System.txt",
     "Nuovo Documento di testo.txt",
     "Untitled",
-    "templates/standard-doc.md",
     "docs/system/Documentation Structure MOC.md",
     "docs/system/System Architecture Overview.md",
     "docs/system/Versioning & Change Management.md",
@@ -237,14 +248,10 @@
     "Untitled 1.md",
     "templates",
     "docs/workflows/Authoring Workflow.md",
-    "scripts/chatgpt_summary.py",
-    "scripts/Nuovo Documento di testo.txt",
-    "scripts/metadata_extractor.py",
     "docs/templates/API Change Request Template.md",
     "docs/templates/Workflow Documentation Template.md",
     "docs/templates/Feature Documentation Template.md",
     "docs/workflows/Branching & Git Workflow.md",
-    "docs/system/API Style Guide.md",
-    "assets"
+    "docs/system/API Style Guide.md"
   ]
 }
