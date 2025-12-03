@@ -6,81 +6,59 @@ status: generated
 
 # Documentation Index (auto-generated)
 
-## docs
-- [index](../index.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
-
-## api
+## API Documentation
 - [API Concept Overview](../api/API Concept Overview.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
-- [API Documentation](../api/index.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Sample Endpoint - POST Tasks](../api/Sample Endpoint - POST Tasks.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 
-## system
+## System Documentation
 - [API Style Guide](../system/API Style Guide.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
-- [Untitled](../system/Documentation Structure MOC.md)
-  - status: None
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
+- [Documentation Structure MOC](../system/Documentation Structure MOC.md)
+  - status: ['generated']
   - updated: 2025-11-27
   - tags: ['documentation']
-- [System Documentation](../system/index.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
 - [System Architecture Overview](../system/System Architecture Overview.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Versioning & Change Management](../system/Versioning & Change Management.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 
-## templates
+## Templates
 - [API Change Request Template](../templates/API Change Request Template.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Feature Documentation Template](../templates/Feature Documentation Template.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
-- [Templates](../templates/index.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Workflow Documentation Template](../templates/Workflow Documentation Template.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 
-## workflows
+## Workflow Documentation
 - [Authoring Workflow](../workflows/Authoring Workflow.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Branching & Git Workflow](../workflows/Branching & Git Workflow.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
-- [Workflows](../workflows/index.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 - [Publishing Workflow](../workflows/Publishing Workflow.md)
-  - status: unknown
-  - updated: unknown
-  - tags: []
+  - status: n/a
+  - updated: n/a
+  - tags: ['none']
 
