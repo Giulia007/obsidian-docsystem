@@ -1,0 +1,6 @@
+.env
+.env.local
+.env.*
+docs/system/test-content.md
+docs/system/test-content.summary.md
+.obsidian/workspace.json
