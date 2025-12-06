@@ -28,6 +28,7 @@ Requirements:
 import os
 import sys
 import yaml
+import argparse
 from pathlib import Path
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -88,7 +89,7 @@ def build_system_prompt():
     )
 
 
-def call_model(body_text: str):
+def call_model(body_text: str, model: str, max_tokens: int, temperature: float):
     """Send the content to OpenAI and return the summary text."""
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -128,22 +129,24 @@ def write_summary(output_path: Path, metadata: dict, summary_text: str, source_f
 # ------------------------------------------------------------
 
 def main():
-    if len(sys.argv) < 2:
-        print("Error: No input file provided.")
-        print("Usage: python scripts/chatgpt_summary.py <input_markdown_file>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Generate an AI summary for a Markdown document.")
+    parser.add_argument("input_file", help="Path to the Markdown file to summarize.")
+    parser.add_argument("--model", default="gpt-4o-mini", help="OpenAI model to use.")
+    parser.add_argument("--max-tokens", type=int, default=600, help="Maximum tokens for the summary.")
+    parser.add_argument("--temperature", type=float, default=0.2, help="Sampling temperature (0.0–1.0).")
 
-    target_file = Path(sys.argv[1])
+    args = parser.parse_args()
+
+    target_file = Path(args.input_file)
     if not target_file.exists():
         print(f"[ERROR] File not found: {target_file}")
         sys.exit(1)
 
     metadata, body = extract_frontmatter(target_file)
-    summary_text = call_model(body)
+
+    # The model call now uses CLI parameters
+    summary_text = call_model(body, args.model, args.max_tokens, args.temperature)
 
     output_path = target_file.with_suffix(".summary.md")
     write_summary(output_path, metadata, summary_text, target_file)
 
-
-if __name__ == "__main__":
-    main()
