@@ -1,7 +1,7 @@
 ---
 title: <% tp.file.title %>
-created: <% tp.date.now("YYYY-MM-DD") %>
-updated: <% tp.date.now("YYYY-MM-DD") %>
+created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+updated: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 tags:
   - documentation
 version:
