@@ -33,6 +33,10 @@ from pathlib import Path
 from openai import OpenAI
 from dotenv import load_dotenv
 
+
+print("[DEBUG] Script loaded")
+
+
 # Load environment variables from .env file if present
 load_dotenv()
 
@@ -150,3 +154,5 @@ def main():
     output_path = target_file.with_suffix(".summary.md")
     write_summary(output_path, metadata, summary_text, target_file)
 
+if __name__ == "__main__":
+    main()
