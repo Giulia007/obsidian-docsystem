@@ -17,7 +17,7 @@ Notes:
 """
 
 import sys
-from datetime import date
+from datetime import datetime, timezone
 from pathlib import Path
 import yaml
 
@@ -32,7 +32,7 @@ def update_frontmatter(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
     lines = text.splitlines()
 
-    today = str(date.today())
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M")
     modified = False
 
     # Case 1 — file already has YAML frontmatter
@@ -54,8 +54,8 @@ def update_frontmatter(path: Path) -> bool:
             return False
 
         # Update or insert the updated field
-        if meta.get("updated") != today:
-            meta["updated"] = today
+        if meta.get("updated") != timestamp:
+            meta["updated"] = timestamp
             modified = True
 
         # Write the updated file only if needed
@@ -72,7 +72,7 @@ def update_frontmatter(path: Path) -> bool:
         return modified
 
     # Case 2 — no frontmatter, create a YAML block
-    meta = {"updated": today}
+    meta = {"updated": timestamp}
     new_yaml = yaml.safe_dump(meta, sort_keys=False).rstrip()
     body = text.strip()
 
