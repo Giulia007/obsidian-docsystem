@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write    # REQUIRED to push changes back to the repository
+
 jobs:
   update-timestamps:
     runs-on: ubuntu-latest
