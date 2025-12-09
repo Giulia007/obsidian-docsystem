@@ -45,14 +45,14 @@ jobs:
       - name: Run timestamp update script
         if: ${{ steps.changes.outputs.changed_files != '' }}
         run: |
-          echo "Updating timestamps for:"
-          echo "${{ steps.changes.outputs.changed_files }}"
+            echo "Updating timestamps for:"
+            echo "${{ steps.changes.outputs.changed_files }}"
 
-          # Loop through each changed file
-          for file in ${{ steps.changes.outputs.changed_files }}; do
-            echo "Processing $file"
+            # Loop robustly through multiline file list (preserves spaces)
+            while IFS= read -r file; do
+            echo "Processing '$file'"
             python scripts/update_timestamps.py "$file"
-          done
+            done <<< "${{ steps.changes.outputs.changed_files }}"
 
       - name: Commit changes
         if: ${{ steps.changes.outputs.changed_files != '' }}
