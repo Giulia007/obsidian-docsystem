@@ -6,5 +6,5 @@ docs/system/test-content.summary.md
 .obsidian/workspace.json
 venv
 __pycache__/
-*.pyctree.txt
-.tree.txt
+*.pyc
+tree.txt
