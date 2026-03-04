@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/workflows/Branching%20%26%20Git%20Workflow/">
+        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/api/Metadata%20API%20Example/">
       
       
       
@@ -19,15 +19,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Branching & Git Workflow - Obsidian Documentation System</title>
+        <title>Metadata API Example - Obsidian Documentation System</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#metadata-api-example" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Branching & Git Workflow
+              Metadata API Example
             
           </span>
         </div>
@@ -221,7 +226,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../placeholder.md" class="md-tabs__link">
+        <a href="../../workflows/placeholder.md" class="md-tabs__link">
           
   
   
@@ -261,7 +266,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../api/placeholder.md" class="md-tabs__link">
+        <a href="../placeholder.md" class="md-tabs__link">
           
   
   
@@ -502,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../placeholder.md" class="md-nav__link">
+      <a href="../../workflows/placeholder.md" class="md-nav__link">
         
   
   
@@ -680,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/placeholder.md" class="md-nav__link">
+      <a href="../placeholder.md" class="md-nav__link">
         
   
   
@@ -726,6 +731,97 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-api-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata API Example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata API Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-success-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Success Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-error-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Error Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -744,7 +840,43 @@
   
 
 
-  <h1>Branching & Git Workflow</h1>
+  <h1>Metadata API Example</h1>
+
+<h3 id="metadata-api-example">Metadata API Example<a class="headerlink" href="#metadata-api-example" title="Permanent link">&para;</a></h3>
+<h4 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h4>
+<p>This example demonstrates the use of the documentation system's metadata API endpoint. It provides a simple, real-world illustration of how structured metadata can be accessed and integrated.</p>
+<h4 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h4>
+<p><strong>GET</strong> <code>/api/metadata</code></p>
+<p><strong>Query parameter:</strong> <code>file</code> — Relative path under <code>docs/</code>, e.g. <code>system/Documentation Structure MOC.md</code></p>
+<h4 id="example-request">Example Request<a class="headerlink" href="#example-request" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>GET /api/metadata?file=system/Documentation%20Structure%20MOC.md
+</code></pre></div>
+
+<h4 id="example-success-response">Example Success Response<a class="headerlink" href="#example-success-response" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Documentation Structure MOC&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-27&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;updated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-27&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;documentation&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;in progress&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="example-error-response">Example Error Response<a class="headerlink" href="#example-error-response" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;File not found.&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The API is self-documented and testable via Swagger UI at <code>/docs</code>.</li>
+</ul>
 
 
 
@@ -752,7 +884,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -796,10 +929,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

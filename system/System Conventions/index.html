@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/system/Versioning%20%26%20Change%20Management/">
+        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/system/System%20Conventions/">
       
       
       
@@ -19,15 +19,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Versioning & Change Management - Obsidian Documentation System</title>
+        <title>System Conventions - Obsidian Documentation System</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#file-naming" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Versioning & Change Management
+              System Conventions
             
           </span>
         </div>
@@ -726,6 +731,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Naming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Field
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -744,7 +790,84 @@
   
 
 
-  <h1>Versioning & Change Management</h1>
+  <h1>System Conventions</h1>
+
+<h3 id="file-naming">File Naming<a class="headerlink" href="#file-naming" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Markdown files use <strong>Title Case with spaces</strong> (e.g., <code>System Architecture Overview.md</code>) for readability in Obsidian.</li>
+<li>Scripts and configuration files use <strong>snake_case</strong> (e.g., <code>metadata_extractor.py</code>) for alignment with coding standards.</li>
+</ul>
+<hr />
+<h3 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Internal links:</strong><br />
+    Use standard Markdown syntax with relative paths:</p>
+<p><code>[AI Summary Generation](../workflows/AI%20Summary%20Generation)</code></p>
+<p>Works in MkDocs and on GitHub.<br />
+<code>%20</code> replaces spaces in filenames.<br />
+Omit <code>.md</code> for cleaner URLs in MkDocs.</p>
+</li>
+<li>
+<p><strong>Obsidian use:</strong><br />
+    Wikilinks (<code>[[AI Summary Generation]]</code>) work only inside Obsidian and are ignored by MkDocs and GitHub.<br />
+    Replace them with standard Markdown links in any file published to the site.</p>
+</li>
+<li>
+<p><strong>External links:</strong><br />
+    Use full <code>https://</code> URLs and descriptive link text.</p>
+</li>
+</ul>
+<hr />
+<h3 id="status-field">Status Field<a class="headerlink" href="#status-field" title="Permanent link">&para;</a></h3>
+<p>Defines the lifecycle stage of each document within the documentation system.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Typical Location</th>
+<th>Managed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>draft</strong></td>
+<td>Temporary state for early or incomplete files not yet pushed to <code>main</code>. Drafts may later be promoted to <code>in progress</code>.</td>
+<td>Local vault or feature branch</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>in progress</strong></td>
+<td>Committed to <code>main</code> and therefore automatically published, but still being refined.</td>
+<td>Repository (<code>main</code>)</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>generated</strong></td>
+<td>Created automatically by a script (e.g., summaries, index pages).</td>
+<td>Repository (<code>main</code>)</td>
+<td>Automation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage rules</strong></p>
+<ul>
+<li>
+<p>Every Markdown file must include a <code>status</code> field in its YAML frontmatter.</p>
+</li>
+<li>
+<p>Files marked <code>draft</code> are local or branch-bound and excluded from deployment until committed.</p>
+</li>
+<li>
+<p>Files marked <code>in progress</code> or <code>generated</code> are deployed automatically with each push to <code>main</code>.</p>
+</li>
+<li>
+<p>Status values are not changed automatically by CI; they are updated manually or by scripts when applicable.</p>
+</li>
+<li>Status values are updated manually by the author. CI does not modify the <code>status</code> field (future implementation).</li>
+</ul>
+<hr />
 
 
 
@@ -752,7 +875,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -796,10 +920,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
