@@ -1,13 +1,14 @@
 ---
 title: System Conventions
 created: 2025-12-21T18:17
-updated: 2025-12-21T18:17
+updated: 2026-03-04T17:50
 tags:
-  - documentation
-version:
+- documentation
+version: null
 status:
-  - draft
+- draft
 ---
+
 ### File Naming
 
 - Markdown files use **Title Case with spaces** (e.g., `System Architecture Overview.md`) for readability in Obsidian.

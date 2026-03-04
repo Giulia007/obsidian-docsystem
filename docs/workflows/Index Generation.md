@@ -1,14 +1,15 @@
 ---
 title: Index Generation
 created: 2026-03-04T13:42
-updated: 2026-03-04T13:42
+updated: 2026-03-04T17:50
 tags:
-  - documentation
-  - automation
-version:
+- documentation
+- automation
+version: null
 status:
-  - in progress
+- in progress
 ---
+
 ## Index Generation Workflow
 
 Generates `auto-index.md` — a navigable index of all documentation files, grouped by section, with metadata displayed for each entry.

@@ -1,11 +1,12 @@
 ---
 title: Obsidian Documentation System
 created: 2026-03-04T17:43
-updated: 2026-03-04T17:43
+updated: 2026-03-04T17:50
 tags:
-  - documentation
+- documentation
 status: published
 ---
+
 # Obsidian Documentation System
 
 Welcome to the documentation hub for the **Obsidian Documentation System** — a small, real-world doc-as-code environment designed to demonstrate modern technical writing workflows.

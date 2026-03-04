@@ -1,12 +1,13 @@
 ---
 title: AI Summary Generation
 created: 2025-12-21T17:40
-updated: 2025-12-21T17:40
+updated: 2026-03-04T17:50
 tags:
-  - documentation
-version:
+- documentation
+version: null
 status: in progress
 ---
+
 ## AI Summary Generation Workflow
 
 Generates concise, standardized summaries from Markdown files using a local Python script connected to the OpenAI API.
