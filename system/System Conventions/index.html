@@ -344,6 +344,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
 
       </a>
     </li>
@@ -770,6 +777,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-new-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating New Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -868,6 +886,17 @@ Omit <code>.md</code> for cleaner URLs in MkDocs.</p>
 <li>Status values are updated manually by the author. CI does not modify the <code>status</code> field (future implementation).</li>
 </ul>
 <hr />
+<h3 id="creating-new-documents">Creating New Documents<a class="headerlink" href="#creating-new-documents" title="Permanent link">&para;</a></h3>
+<p>New documentation files should be created using the <code>standard-doc</code> template located in <code>templates/standard-doc.md</code>. This template includes the required YAML frontmatter fields:</p>
+<ul>
+<li><code>title</code></li>
+<li><code>created</code></li>
+<li><code>updated</code></li>
+<li><code>tags</code></li>
+<li><code>status</code></li>
+<li><code>version</code></li>
+</ul>
+<p>In Obsidian, use <strong>Alt + T</strong> to insert the template when creating a new file (requires the Templater plugin).</p>
 
 
 

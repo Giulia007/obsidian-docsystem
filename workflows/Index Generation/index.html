@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/workflows/Metadata%20Extraction/">
+        <link rel="canonical" href="https://giulia007.github.io/obsidian-docsystem/workflows/Index%20Generation/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Metadata Extraction - Obsidian Documentation System</title>
+        <title>Index Generation - Obsidian Documentation System</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#index-generation-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Metadata Extraction
+              Index Generation
             
           </span>
         </div>
@@ -338,6 +343,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -726,6 +738,97 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index-generation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Index Generation Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Index Generation Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -744,9 +847,53 @@
   
 
 
-  <h1>Metadata Extraction</h1>
+  <h1>Index Generation</h1>
 
+<h2 id="index-generation-workflow">Index Generation Workflow<a class="headerlink" href="#index-generation-workflow" title="Permanent link">&para;</a></h2>
+<p>Generates <code>auto-index.md</code> — a navigable index of all documentation files, grouped by section, with metadata displayed for each entry.</p>
+<hr />
+<h3 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h3>
+<p>Manually maintaining index pages is tedious and error-prone. As documentation grows, indexes drift out of sync with actual content. This script generates the index automatically from YAML frontmatter, ensuring navigation always reflects the current state of the documentation.</p>
+<hr />
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>Run from the repository root, with the Python virtual environment activated:</p>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>scripts/metadata_extractor.py
+</code></pre></div>
 
+<hr />
+<h3 id="what-it-does">What It Does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Scans all Markdown files in <code>docs/</code> (excluding <code>auto-index.md</code> itself)</li>
+<li>Reads YAML frontmatter from each file (title, status, tags, updated, version)</li>
+<li>Groups files by section (API, System, Workflows, Templates)</li>
+<li>Outputs <code>docs/system/auto-index.md</code></li>
+</ol>
+<hr />
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<p>The generated <code>auto-index.md</code> includes:</p>
+<ul>
+<li>Document title (linked)</li>
+<li>Status, last updated date, version (if present)</li>
+<li>Tags</li>
+</ul>
+<p>Example entry:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">-</span><span class="w"> </span><span class="err">[</span><span class="k">System</span><span class="w"> </span><span class="n">Architecture</span><span class="w"> </span><span class="n">Overview</span><span class="err">]</span><span class="p">(</span><span class="k">system</span><span class="o">/</span><span class="k">System</span><span class="w"> </span><span class="n">Architecture</span><span class="w"> </span><span class="n">Overview</span><span class="p">.</span><span class="n">md</span><span class="p">)</span><span class="w"> </span><span class="n">—</span><span class="w"> </span><span class="k">status</span><span class="o">:</span><span class="w"> </span><span class="n n-Quoted">`in progress`</span><span class="w"> </span><span class="n">·</span><span class="w"> </span><span class="n">updated</span><span class="o">:</span><span class="w"> </span><span class="n n-Quoted">`2025-03-04`</span><span class="w"> </span><span class="n">·</span><span class="w"> </span><span class="n">tags</span><span class="o">:</span><span class="w"> </span><span class="n n-Quoted">`documentation`</span>
+</code></pre></div>
+
+<hr />
+<h3 id="when-to-run">When to Run<a class="headerlink" href="#when-to-run" title="Permanent link">&para;</a></h3>
+<p>Run this script before committing when you've:</p>
+<ul>
+<li>Added new documentation files</li>
+<li>Deleted or renamed files</li>
+<li>Changed a document's title or tags</li>
+</ul>
+<hr />
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The script does not auto-commit — you decide when to commit the regenerated index.</li>
+<li>The output file's status is set to <code>generated</code> automatically.</li>
+</ul>
 
 
 

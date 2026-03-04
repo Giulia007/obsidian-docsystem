@@ -23,7 +23,7 @@
     
     
       
-        <title>Timestamp Maintenence - Obsidian Documentation System</title>
+        <title>Timestamp Maintanence - Obsidian Documentation System</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Timestamp Maintenence
+              Timestamp Maintanence
             
           </span>
         </div>
@@ -343,6 +343,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
   
 
       </a>
@@ -820,6 +827,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#working-with-automated-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Automated Commits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Automated Commits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolving-common-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolving Common Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -840,7 +908,7 @@
   
 
 
-  <h1>Timestamp Maintenence</h1>
+  <h1>Timestamp Maintanence</h1>
 
 <h2 id="timestamp-maintenance-workflow">Timestamp Maintenance Workflow<a class="headerlink" href="#timestamp-maintenance-workflow" title="Permanent link">&para;</a></h2>
 <p>Automatically updates the <code>updated:</code> field in YAML frontmatter whenever documentation files are changed, ensuring metadata accuracy without relying on contributors to remember.</p>
@@ -882,6 +950,40 @@
 <li>The <code>[skip-timestamp]</code> flag in commit messages prevents the workflow from triggering itself in a loop.</li>
 <li>This workflow runs as part of CI, not locally — contributors don't need to do anything.</li>
 </ul>
+<hr />
+<h2 id="working-with-automated-commits">Working with Automated Commits<a class="headerlink" href="#working-with-automated-commits" title="Permanent link">&para;</a></h2>
+<p>The timestamp updater pushes a commit to <code>main</code> after your push. This means the remote repository will be one commit ahead of your local copy immediately after you push.</p>
+<h3 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
+<p>If you start a new work session without pulling first, your local branch will be behind the remote. When you try to push later, Git will reject it and ask you to pull. This can lead to merge conflicts — especially if you've deleted or renamed files that the CI modified.</p>
+<h3 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">&para;</a></h3>
+<p><strong>Always pull before starting work:</strong></p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<p>Run this at the start of every work session, before making any changes.</p>
+<h3 id="resolving-common-conflicts">Resolving Common Conflicts<a class="headerlink" href="#resolving-common-conflicts" title="Permanent link">&para;</a></h3>
+<p>If you see a conflict like this:</p>
+<div class="codehilite"><pre><span></span><code>Unmerged paths:
+  deleted by us:   docs/some-file.md
+</code></pre></div>
+
+<p>This means:
+- You deleted the file locally
+- The CI updated its timestamp on the remote before you pulled</p>
+<p>To resolve, confirm the deletion:</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;docs/some-file.md&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge remote changes, keep local deletions&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<h3 id="alternative-approaches">Alternative Approaches<a class="headerlink" href="#alternative-approaches" title="Permanent link">&para;</a></h3>
+<p>In a team context, other approaches can reduce these sync issues:</p>
+<ul>
+<li><strong>Feature branches</strong> — Work on a branch, merge to <code>main</code> when ready. CI only runs on <code>main</code>, so your branch stays unaffected.</li>
+<li><strong>Pre-commit hooks</strong> — Update timestamps locally before committing, removing the need for CI to push back.</li>
+<li><strong>Pull with rebase</strong> — <code>git pull --rebase origin main</code> keeps history linear by placing your commits after CI commits.</li>
+</ul>
+<hr />
 
 
 
