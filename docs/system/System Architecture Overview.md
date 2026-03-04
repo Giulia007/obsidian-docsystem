@@ -5,117 +5,95 @@ updated: 2025-12-21T19:05
 tags:
   - documentation
 version:
-status:
+status: in progress
 ---
-## 1.?
+## 1. Introduction
+
 ### 1.1 Purpose of the Document
 
-This document provides a high-level overview of the project, outlining the directory structure, the main categories of documents, and how they relate to the publishing and updating workflow.
-It is intended as a non-technical snapshot of the system as it currently stands.
+This document provides a high-level overview of the documentation system, outlining its components, structure, and how content moves from authoring to publication.
 
-The goal is to support onboarding and future development by clarifying how the different components—Obsidian, Git, MkDocs, GitHub Pages, and GitHub Actions—interact within the larger documentation workflow. By describing these connections explicitly, the document offers a stable reference for maintaining, extending, or modifying the system over time.
+The goal is to support onboarding and future development by clarifying how Obsidian, Git, MkDocs, GitHub Pages, and GitHub Actions interact within the larger documentation workflow. By describing these connections explicitly, the document offers a stable reference for maintaining, extending, or modifying the system over time.
 
-#### 1.2 Previous Knowledge Assumptions
+### 1.2 Previous Knowledge Assumptions
 
-Readers do not need a deep technical background to understand this document. References to Git, static site generators, and CI/CD pipelines are kept at a conceptual level, so those new to these tools can still follow the architectural overview.  
+Readers do not need a deep technical background to understand this document. References to Git, static site generators, and CI/CD pipelines are kept at a conceptual level, so those new to these tools can still follow the architectural overview.
+
 For contributors who plan to modify or extend the system, a basic familiarity with Markdown and Git will eventually be required.
 
-#### 1.3 System Overview
+### 1.3 System Overview
 
 Manual documentation approaches become difficult to maintain and share as complexity grows. This system establishes a structured, extensible baseline that supports automation, consistency, and collaborative evolution over time.
 
-At a high level, this project is a doc-as-code documentation system that combines an Obsidian authoring vault, a Git/GitHub repository, MkDocs Material, and a GitHub Actions pipeline.
+At a high level, this is a doc-as-code documentation system that combines an Obsidian authoring vault, a Git/GitHub repository, MkDocs Material, and a GitHub Actions pipeline.
 
-The same content is used to build and deploy a public documentation site to GitHub Pages on each push to the main branch. For brevity, this branch is referred to as “main” throughout this document.
+Content is used to build and deploy a public documentation site to GitHub Pages on each push to the main branch.
 
-#### 1.3.1 System at a Glance
+### 1.4 System at a Glance
 
-Components and Interactions
-- Source of truth: GitHub repository mirroring the local Obsidian vault
-- Authoring tool: Obsidian vault with structured folders, templates with YAML frontmatter
-- Automation scripts: Python-based automations handling indexing, AI-generated summaries, and frontmatter timestamp updates
-- CI/CD pipeline: GitHub Actions workflow that builds and deploys the site to GitHub Pages on every push to main.
+- **Source of truth:** GitHub repository mirroring the local Obsidian vault
+- **Authoring tool:** Obsidian vault with structured folders, templates with YAML frontmatter
+- **Automation scripts:** Python-based tools handling indexing, AI-generated summaries, and frontmatter timestamp updates
+- **CI/CD pipeline:** GitHub Actions workflow that builds and deploys the site to GitHub Pages on every push to main
 
-### 1.4 System Components
-    
-#### 1.4.1 Obsidian Vault
+---
 
-The local directory of Markdown files used as the primary authoring environment for documentation content. Its role in the system is to support drafting, structuring, and maintaining documentation, before content is processed by version control, automation, and publishing workflows. 
+## 2. System Components
 
-Writers create and edit Markdown files using templates with YAML frontmatter, ensuring that each document carries consistent metadata required by downstream scripts and CI pipelines. 
+### 2.1 Obsidian Vault
 
-The vault itself resides locally and corresponds directly to the working directory of the Git repository.
+The local directory of Markdown files used as the primary authoring environment. Writers create and edit Markdown files using templates with YAML frontmatter, ensuring that each document carries consistent metadata required by downstream scripts and CI pipelines.
 
-#### 1.4.2 Git and GitHub Repository
+The vault corresponds directly to the working directory of the Git repository.
 
-The GitHub repository is the remote version-controlled repository that stores the system’s documentation, configuration files, and automation code. It provides the shared remote location from which automation and publishing processes operate.
+### 2.2 Git and GitHub Repository
 
-#### 1.4.3 MkDocs and Site Generation
+The GitHub repository stores the system's documentation, configuration files, and automation code. It provides the shared remote location from which automation and publishing processes operate.
 
-MkDocs is a static site generator for building documentation websites from Markdown files. In this system, it is defined through configuration and used to generate the documentation site published via GitHub Pages.
+### 2.3 MkDocs and Site Generation
 
-#### 1.4.4 GitHub Actions and CI
+MkDocs is a static site generator for building documentation websites from Markdown files. In this system, it generates the documentation site published via GitHub Pages.
 
-GitHub Actions is GitHub’s built-in automation and continuous integration service. In this system, it provides the environment in which automated tasks are executed in response to changes in the repository.
+### 2.4 GitHub Actions and CI
 
-#### 1.4.5 Automation Scripts
+GitHub Actions is GitHub's built-in automation and continuous integration service. In this system, it executes automated tasks in response to changes in the repository — including site builds and timestamp updates.
 
-Automation scripts are custom Python programs maintained as part of the system to perform operations on documentation files and metadata. They encapsulate system-specific logic and are executed either locally or within automated processes.
+### 2.5 Automation Scripts
 
+Custom Python scripts maintained as part of the system to perform operations on documentation files and metadata. They are executed either locally (indexing, summaries) or within CI (timestamp updates).
 
-##  2. Workflows
+---
 
-### 2.1 System-driven documentation maintenance
+## 3. Workflows
 
-**Trigger**  
-A commit is pushed to the main branch.
+This section provides a brief overview of the system's automated workflows. For detailed usage instructions, see the individual workflow documents.
 
-**Behavior**  
-Commits to the main branch trigger a rebuild and redeployment of the documentation site to GitHub Pages.
+### 3.1 Site Publication
 
-**Outcome**  
-The published documentation on GitHub Pages reflects the updated repository state.
+**Trigger:** A commit is pushed to the main branch.
 
+**Outcome:** The documentation site is rebuilt and redeployed to GitHub Pages, reflecting the current repository state.
 
-### 2.2 AI-assisted documentation summarization
+### 3.2 Timestamp Maintenance
 
-**Trigger**
+**Trigger:** A push to main (without `[skip-timestamp]` flag).
 
-A contributor runs `chatgpt_summary.py` on a Markdown file ready for summarization.
+**Outcome:** The `updated:` field in changed Markdown files is automatically updated by CI.
 
-**Process** Steps
+See: [Timestamp Maintenance](../workflows/Timestamp%20Maintenance.md)
 
-1. The script reads the Markdown file and extracts YAML frontmatter and body.
-    
-2. Content is sent to the OpenAI API for summarization.
-    
-3. The API response is written as a new `*.summary.md` file.
-    
-4. Original metadata is propagated to the new file.
-    
-5. The generated summary enters version control and can be indexed or published via MkDocs.
-    
+### 3.3 Index Generation
 
-**Inputs**
+**Trigger:** Manual execution of `metadata_extractor.py`.
 
-- Markdown file (`docs/...`)
-    
-- YAML metadata fields (`title`, `tags`, `updated`)
-    
-- `scripts/chatgpt_summary.py`
-    
+**Outcome:** Generates `auto-index.md` — a navigable index of all documentation files with their metadata.
 
-**Outputs**
+See: [Index Generation](../workflows/Index%20Generation.md)
 
-- AI-generated `*.summary.md` file with consistent metadata
-    
-- Added to `auto-index.md` during the next index generation
+### 3.4 AI Summary Generation
 
-    
-**Notes**
+**Trigger:** Manual execution of `chatgpt_summary.py` on a Markdown file.
 
-For detailed usage instructions, see [[.....]]
+**Outcome:** Generates a standardised summary file with propagated metadata.
 
-
-
-****
+See: [AI Summary Generation](../workflows/AI%20Summary%20Generation.md)

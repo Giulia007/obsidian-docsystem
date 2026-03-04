@@ -1,7 +1,6 @@
 ---
-
 title: API Documentation
-
+status: published
 ---
 This section documents the metadata API endpoint, which provides programmatic access to document metadata stored in YAML frontmatter.
 

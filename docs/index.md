@@ -1,50 +1,58 @@
+---
+title: Obsidian Documentation System
+created: 2026-03-04T17:43
+updated: 2026-03-04T17:43
+tags:
+  - documentation
+status: published
+---
 # Obsidian Documentation System
 
 Welcome to the documentation hub for the **Obsidian Documentation System** — a small, real-world doc-as-code environment designed to demonstrate modern technical writing workflows.
 
 This project showcases:
 
-- internal documentation structure  
-- system and architecture descriptions  
-- workflow documentation  
-- API documentation and style guidelines  
-- reusable templates  
-- automated publishing pipeline (Obsidian → GitHub → MkDocs → Pages)  
+- Documentation system architecture
+- Workflow automation (indexing, timestamps, AI summaries)
+- API documentation
+- Metadata-driven content management
 
-It has been created to reflect **current industry standards** in technical documentation, using:
+Built with:
 
-- MkDocs Material  
-- GitHub Actions  
-- GitHub Pages  
-- Obsidian for authoring  
-- Markdown & doc-as-code principles  
+- Obsidian for authoring
+- MkDocs Material for publishing
+- GitHub Actions for CI/CD
+- GitHub Pages for hosting
+
+---
 
 ## Contents
 
 ### System Documentation
-Conceptual overviews and architectural notes describing how this documentation system is structured and maintained.
+
+Architecture overview, system conventions, and the central navigation map (MOC) for this documentation system.
 
 ### Workflows
-Documentation of how content moves from draft → review → publication, including branching and Git guidelines.
+
+Documentation for the automated and manual processes that keep this system running — including index generation, timestamp maintenance, and AI-assisted summaries.
 
 ### API Documentation
-Simple conceptual and practical examples that demonstrate API literacy without requiring a complex backend.
 
-### Templates
-Reusable writing templates for feature docs, workflows, and API change requests.
+Example endpoint demonstrating programmatic access to document metadata.
+
+---
 
 ## Purpose
 
-The purpose of this project is to demonstrate:
+This project demonstrates:
 
-- clarity of writing  
-- technical understanding  
-- documentation architecture  
-- developer-facing communication  
-- calm, structured, internal-facing documentation practice  
+- Clear, structured technical writing
+- Documentation system thinking
+- Information architecture awareness
+- Doc-as-code workflows
+
+---
 
 ## How to Use This Site
 
-Use the left navigation bar to explore the documentation categories.  
-Each section contains curated examples representing different types of technical documentation used in software teams.
-
+Use the navigation to explore. Each section contains working examples of internal-facing technical documentation.

@@ -59,3 +59,15 @@ Defines the lifecycle stage of each document within the documentation system.
 
 ---
 
+### Creating New Documents
+
+New documentation files should be created using the `standard-doc` template located in `templates/standard-doc.md`. This template includes the required YAML frontmatter fields:
+
+- `title`
+- `created`
+- `updated`
+- `tags`
+- `status`
+- `version`
+
+In Obsidian, use **Alt + T** to insert the template when creating a new file (requires the Templater plugin).

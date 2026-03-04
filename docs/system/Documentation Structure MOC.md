@@ -8,34 +8,37 @@ status:
   - in progress
 version:
 ---
-## Purpose  
-This document serves as the central map of the documentation system. It connects system-level concepts, workflows, templates, and API examples into a unified architecture. It acts as the main navigation hub for contributors, ensures consistency across documentation pieces, and provides a high-level view of all components.
+---
+title: Documentation Structure MOC
+created: 2025-11-27
+updated: 2025-03-04
+tags:
+  - documentation
+status:
+  - in progress
+---
+
+## Purpose
+
+This document serves as the central map of the documentation system. It connects system-level concepts, workflows, and API examples into a unified architecture. It acts as the main navigation hub for contributors and provides a high-level view of all components.
 
 ## Intended Audience
+
 Internal contributors, documentation maintainers, and developers working with the documentation system.
 
+---
+
 ### System Documentation
-- [[API Style Guide]]
-- [[System Architecture Overview]]
-- [[Versioning & Change Management]]
+
+- [System Architecture Overview](System%20Architecture%20Overview.md)
+- [System Conventions](System%20Conventions.md)
 
 ### Workflows
-- [[Publishing Workflow]]
-- [[Authoring Workflow]]
-- [[Branching & Git Workflow]]
 
-### Templates
-- [[Feature Documentation Template]]
-- [[Workflow Documentation Template]]
-- [[API Change Request Template]]
+- [Index Generation](../workflows/Index%20Generation.md)
+- [Timestamp Maintenance](../workflows/Timestamp%20Maintenance.md)
+- [AI Summary Generation](../workflows/AI%20Summary%20Generation.md)
 
 ### API Documentation
-- [[API Concept Overview]]
-- [[Sample Endpoint - POST Tasks]]
 
-### Future Additions
-- [[Glossary]]
-- [[Release Notes]]
-- [[Tools & Dependencies]]
-- [[Documentation Roadmap]]
-- [[Onboarding Checklist for Contributors]]
+- [Metadata API Example](../api/Metadata%20API%20Example.md)

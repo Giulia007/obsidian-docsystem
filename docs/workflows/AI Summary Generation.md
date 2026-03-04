@@ -5,7 +5,7 @@ updated: 2025-12-21T17:40
 tags:
   - documentation
 version:
-status:
+status: in progress
 ---
 ## AI Summary Generation Workflow
 
