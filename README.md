@@ -1,3 +1,7 @@
+---
+updated: 2026-03-04T18:04
+---
+
 # Obsidian Documentation System
 
 A doc-as-code documentation system demonstrating modern technical writing workflows. Built with Obsidian, MkDocs Material, and GitHub Actions.
