@@ -23,7 +23,7 @@ import yaml
 from datetime import date
 
 DOCS_DIR = "docs"
-OUTPUT_FILE = os.path.join("docs", "system", "auto-index.md")
+OUTPUT_FILE = os.path.join("docs", "auto-index.md")
 
 SECTION_NAMES = {
     "api": "API Documentation",
