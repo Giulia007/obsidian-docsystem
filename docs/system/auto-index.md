@@ -4,9 +4,6 @@ updated: 2026-03-04T17:55
 status: generated
 type: index
 ---
-
-
-
 # Documentation Index
 
 > This page is generated automatically from YAML metadata.

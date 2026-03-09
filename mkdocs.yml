@@ -11,17 +11,6 @@ theme:
     - navigation.expand
     - content.code.copy
 
-nav:
-  - Home: index.md
-  - System:
-      - Documentation Structure MOC: system/Documentation Structure MOC.md
-  - Workflows:
-      - Workflows Index: workflows/placeholder.md
-  - Templates:
-      - Templates Index: templates/placeholder.md
-  - API:
-      - API Index: api/placeholder.md
-
 markdown_extensions:
   - admonition
   - footnotes
