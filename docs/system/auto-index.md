@@ -1,9 +1,10 @@
 ---
 title: Auto-Generated Index
-updated: 2026-03-04T17:55
+updated: 2026-03-09T17:57
 status: generated
 type: index
 ---
+
 # Documentation Index
 
 > This page is generated automatically from YAML metadata.
