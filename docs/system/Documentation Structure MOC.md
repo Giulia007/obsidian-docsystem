@@ -1,13 +1,14 @@
 ---
 title: Documentation Structure MOC
 created: 2025-11-27
-updated: 2026-03-10T10:09
+updated: 2026-03-10T12:39
 tags:
 - documentation
 status:
 - in progress
 version: null
 ---
+
 
 
 ## Purpose
