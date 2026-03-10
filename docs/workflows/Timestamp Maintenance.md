@@ -9,10 +9,6 @@ version: null
 status:
 - in progress
 ---
-
-
-
-
 ## Timestamp Maintenance Workflow
 
 Automatically updates the `updated:` field in YAML frontmatter whenever documentation files are changed, ensuring metadata accuracy without relying on contributors to remember.
@@ -81,6 +77,14 @@ git pull origin main
 ```
 
 Run this at the start of every work session, before making any changes.
+
+### If You Forget to Pull 
+If you commit locally and then push fails with "rejected... fetch first":
+```bash git pull origin main ``` 
+
+If it opens Vim for a merge message:
+- Press `Esc`, type `:wq`, press `Enter`
+- Then push: ```bash git push origin main ```
 
 ### Resolving Common Conflicts
 
