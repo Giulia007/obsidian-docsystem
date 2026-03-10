@@ -1093,10 +1093,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#resolving-common-conflicts" class="md-nav__link">
+  <a href="#resolving-content-conflicts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resolving Common Conflicts
+        Resolving Content Conflicts
       
     </span>
   </a>
@@ -1288,10 +1288,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#resolving-common-conflicts" class="md-nav__link">
+  <a href="#resolving-content-conflicts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resolving Common Conflicts
+        Resolving Content Conflicts
       
     </span>
   </a>
@@ -1393,21 +1393,36 @@
 <p>If it opens Vim for a merge message:
 - Press <code>Esc</code>, type <code>:wq</code>, press <code>Enter</code>
 - Then push: <code>bash git push origin main</code></p>
-<h3 id="resolving-common-conflicts">Resolving Common Conflicts<a class="headerlink" href="#resolving-common-conflicts" title="Permanent link">&para;</a></h3>
-<p>If you see a conflict like this:</p>
-<div class="codehilite"><pre><span></span><code>Unmerged paths:
-  deleted by us:   docs/some-file.md
+<h3 id="resolving-content-conflicts">Resolving Content Conflicts<a class="headerlink" href="#resolving-content-conflicts" title="Permanent link">&para;</a></h3>
+<p>If both you and the CI modified the same file, Git can't automatically merge. You'll see conflict markers in the file:</p>
+<div class="codehilite"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+your changes
+=======
+CI changes
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main
 </code></pre></div>
 
-<p>This means:
-- You deleted the file locally
-- The CI updated its timestamp on the remote before you pulled</p>
-<p>To resolve, confirm the deletion:</p>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;docs/some-file.md&quot;</span>
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge remote changes, keep local deletions&quot;</span>
+<p><strong>Option 1: Keep your version</strong></p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--ours<span class="w"> </span><span class="s2">&quot;docs/path/to/file.md&quot;</span>
+git<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;docs/path/to/file.md&quot;</span>
+</code></pre></div>
+
+<p><strong>Option 2: Keep the remote (CI) version</strong></p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--theirs<span class="w"> </span><span class="s2">&quot;docs/path/to/file.md&quot;</span>
+git<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;docs/path/to/file.md&quot;</span>
+</code></pre></div>
+
+<p><strong>Option 3: Manual merge</strong>
+Open the file, find the conflict markers, edit to combine both changes, then:</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;docs/path/to/file.md&quot;</span>
+</code></pre></div>
+
+<p>After resolving, commit and push:</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Resolve merge conflict&quot;</span>
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </code></pre></div>
 
+<p><strong>Tip:</strong> For auto-generated files like <code>auto-index.md</code>, use <code>--theirs</code> or just regenerate the file with the script — the content can always be recreated.</p>
 <h3 id="alternative-approaches">Alternative Approaches<a class="headerlink" href="#alternative-approaches" title="Permanent link">&para;</a></h3>
 <p>In a team context, other approaches can reduce these sync issues:</p>
 <ul>
