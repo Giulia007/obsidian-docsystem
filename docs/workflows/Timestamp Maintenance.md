@@ -79,6 +79,7 @@ git pull origin main
 Run this at the start of every work session, before making any changes.
 
 ### If You Forget to Pull 
+
 If you commit locally and then push fails with "rejected... fetch first":
 ```bash git pull origin main ``` 
 
@@ -86,24 +87,42 @@ If it opens Vim for a merge message:
 - Press `Esc`, type `:wq`, press `Enter`
 - Then push: ```bash git push origin main ```
 
-### Resolving Common Conflicts
+### Resolving Content Conflicts
 
-If you see a conflict like this:
+If both you and the CI modified the same file, Git can't automatically merge. You'll see conflict markers in the file:
 ```
-Unmerged paths:
-  deleted by us:   docs/some-file.md
+<<<<<<< HEAD
+your changes
+=======
+CI changes
+>>>>>>> origin/main
 ```
 
-This means:
-- You deleted the file locally
-- The CI updated its timestamp on the remote before you pulled
-
-To resolve, confirm the deletion:
+**Option 1: Keep your version**
 ```bash
-git rm "docs/some-file.md"
-git commit -m "Merge remote changes, keep local deletions"
+git checkout --ours "docs/path/to/file.md"
+git add "docs/path/to/file.md"
+```
+
+**Option 2: Keep the remote (CI) version**
+```bash
+git checkout --theirs "docs/path/to/file.md"
+git add "docs/path/to/file.md"
+```
+
+**Option 3: Manual merge**
+Open the file, find the conflict markers, edit to combine both changes, then:
+```bash
+git add "docs/path/to/file.md"
+```
+
+After resolving, commit and push:
+```bash
+git commit -m "Resolve merge conflict"
 git push origin main
 ```
+
+**Tip:** For auto-generated files like `auto-index.md`, use `--theirs` or just regenerate the file with the script — the content can always be recreated.
 
 ### Alternative Approaches
 
