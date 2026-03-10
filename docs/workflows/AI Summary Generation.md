@@ -11,7 +11,7 @@ status: in progress
 
 ## AI Summary Generation Workflow
 
-Generates concise, standardized summaries from Markdown files using a local Python script connected to the OpenAI API.
+Generates concise, standardised summaries from Markdown files using a local Python script connected to the OpenAI API.
 
 ---
 

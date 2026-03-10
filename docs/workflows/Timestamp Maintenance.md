@@ -71,14 +71,24 @@ The timestamp updater pushes a commit to `main` after your push. This means the 
 
 If you start a new work session without pulling first, your local branch will be behind the remote. When you try to push later, Git will reject it and ask you to pull. This can lead to merge conflicts — especially if you've deleted or renamed files that the CI modified.
 
-### Best Practice
+### Order of Operations
 
-**Always pull before starting work:**
-```bash
-git pull origin main
-```
+The correct sequence when working with this repository:
 
-Run this at the start of every work session, before making any changes.
+**Starting fresh:**
+1. `git pull origin main` (get latest, including CI commits)
+2. Make your edits
+3. `git add .`
+4. `git commit -m "your message"`
+5. `git push origin main`
+
+**If you've already made changes before pulling:**
+1. `git add .`
+2. `git commit -m "your message"`
+3. `git pull origin main` (merges CI changes with your commit)
+4. `git push origin main`
+
+**Why this matters:** You can't pull with uncommitted changes — Git will refuse. Either commit first, or stash your changes temporarily with `git stash`, pull, then `git stash pop`.
 
 ### If You Forget to Pull 
 
