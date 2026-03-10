@@ -99,3 +99,23 @@ See: [Index Generation](../workflows/Index%20Generation.md)
 **Outcome:** Generates a standardised summary file with propagated metadata.
 
 See: [AI Summary Generation](../workflows/AI%20Summary%20Generation.md)
+
+---
+
+## 4. Visual Overview
+
+The diagram below shows how the system components connect, from local authoring to published documentation.
+
+![System Architecture](../assets/visual-overview.svg)
+
+---
+
+## 4. Visual Overview
+
+The diagram below shows how the system components connect, from local authoring to published documentation.
+
+![System Architecture](../assets/visual-overview.svg)
+
+**Solid arrows:** Main pipeline (Obsidian → Local Git → GitHub → GitHub Actions → MkDocs Build → GitHub Pages)
+**Solid line also connects:** Local Documentation Automations (Metadata extraction, AI-assisted summary generation) to Local Git Repository
+**Dashed line:** Only connects the Metadata API Endpoint to Local Git Repository
