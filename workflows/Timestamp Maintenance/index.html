@@ -1071,10 +1071,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#best-practice" class="md-nav__link">
+  <a href="#order-of-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practice
+        Order of Operations
       
     </span>
   </a>
@@ -1266,10 +1266,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#best-practice" class="md-nav__link">
+  <a href="#order-of-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practice
+        Order of Operations
       
     </span>
   </a>
@@ -1381,12 +1381,20 @@
 <p>The timestamp updater pushes a commit to <code>main</code> after your push. This means the remote repository will be one commit ahead of your local copy immediately after you push.</p>
 <h3 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h3>
 <p>If you start a new work session without pulling first, your local branch will be behind the remote. When you try to push later, Git will reject it and ask you to pull. This can lead to merge conflicts — especially if you've deleted or renamed files that the CI modified.</p>
-<h3 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">&para;</a></h3>
-<p><strong>Always pull before starting work:</strong></p>
-<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div>
-
-<p>Run this at the start of every work session, before making any changes.</p>
+<h3 id="order-of-operations">Order of Operations<a class="headerlink" href="#order-of-operations" title="Permanent link">&para;</a></h3>
+<p>The correct sequence when working with this repository:</p>
+<p><strong>Starting fresh:</strong>
+1. <code>git pull origin main</code> (get latest, including CI commits)
+2. Make your edits
+3. <code>git add .</code>
+4. <code>git commit -m "your message"</code>
+5. <code>git push origin main</code></p>
+<p><strong>If you've already made changes before pulling:</strong>
+1. <code>git add .</code>
+2. <code>git commit -m "your message"</code>
+3. <code>git pull origin main</code> (merges CI changes with your commit)
+4. <code>git push origin main</code></p>
+<p><strong>Why this matters:</strong> You can't pull with uncommitted changes — Git will refuse. Either commit first, or stash your changes temporarily with <code>git stash</code>, pull, then <code>git stash pop</code>.</p>
 <h3 id="if-you-forget-to-pull">If You Forget to Pull<a class="headerlink" href="#if-you-forget-to-pull" title="Permanent link">&para;</a></h3>
 <p>If you commit locally and then push fails with "rejected... fetch first":
 <code>bash git pull origin main</code> </p>
