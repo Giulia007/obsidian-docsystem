@@ -1,13 +1,14 @@
 ---
 title: Documentation Structure MOC
 created: 2025-11-27
-updated: 2026-03-04T17:55
+updated: 2026-03-09T17:57
 tags:
 - documentation
 status:
 - in progress
 version: null
 ---
+
 ## Purpose
 
 This document serves as the central map of the documentation system. It connects system-level concepts, workflows, and API examples into a unified architecture. It acts as the main navigation hub for contributors and provides a high-level view of all components.
