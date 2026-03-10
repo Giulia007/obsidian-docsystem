@@ -935,17 +935,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#4-visual-overview_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Visual Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1427,17 +1416,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#4-visual-overview_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Visual Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1513,13 +1491,17 @@
 <h2 id="4-visual-overview">4. Visual Overview<a class="headerlink" href="#4-visual-overview" title="Permanent link">&para;</a></h2>
 <p>The diagram below shows how the system components connect, from local authoring to published documentation.</p>
 <p><img alt="System Architecture" src="../../assets/visual-overview.svg" /></p>
-<hr />
-<h2 id="4-visual-overview_1">4. Visual Overview<a class="headerlink" href="#4-visual-overview_1" title="Permanent link">&para;</a></h2>
-<p>The diagram below shows how the system components connect, from local authoring to published documentation.</p>
-<p><img alt="System Architecture" src="../../assets/visual-overview.svg" /></p>
-<p><strong>Solid arrows:</strong> Main pipeline (Obsidian → Local Git → GitHub → GitHub Actions → MkDocs Build → GitHub Pages)
-<strong>Solid line also connects:</strong> Local Documentation Automations (Metadata extraction, AI-assisted summary generation) to Local Git Repository
-<strong>Dashed line:</strong> Only connects the Metadata API Endpoint to Local Git Repository</p>
+<p><strong>Main pipeline (solid arrows, thick):</strong> Content flows from left to right—authored locally in Obsidian, tracked in Git, pushed to GitHub, processed by GitHub Actions, built with MkDocs, and published to GitHub Pages.</p>
+<p><strong>Local Documentation Automations (solid line):</strong> Metadata extraction and AI-assisted summary generation connect to the local Git repository. These run manually before commits.</p>
+<p><strong>Metadata API Endpoint (dashed line):</strong> A read-only local endpoint that exposes document metadata. Operates independently from the publishing pipeline.</p>
+<p><strong>Colour key:</strong>
+- <strong>Green:</strong> Content creation (Obsidian Vault)
+- <strong>Blue:</strong> Version control and storage (Local Git, GitHub Repository)
+- <strong>Orange:</strong> Cloud automation (GitHub Actions)
+- <strong>Yellow:</strong> Local manual tools (Local Documentation Automations)
+- <strong>Purple:</strong> Build process (MkDocs Build)
+- <strong>Teal:</strong> Published output (GitHub Pages)
+- <strong>Light blue:</strong> Read-only utility (Metadata API Endpoint)</p>
 
 
 
