@@ -108,14 +108,17 @@ The diagram below shows how the system components connect, from local authoring 
 
 ![System Architecture](../assets/visual-overview.svg)
 
----
+**Main pipeline (solid arrows, thick):** Content flows from left to right—authored locally in Obsidian, tracked in Git, pushed to GitHub, processed by GitHub Actions, built with MkDocs, and published to GitHub Pages.
 
-## 4. Visual Overview
+**Local Documentation Automations (solid line):** Metadata extraction and AI-assisted summary generation connect to the local Git repository. These run manually before commits.
 
-The diagram below shows how the system components connect, from local authoring to published documentation.
+**Metadata API Endpoint (dashed line):** A read-only local endpoint that exposes document metadata. Operates independently from the publishing pipeline.
 
-![System Architecture](../assets/visual-overview.svg)
-
-**Solid arrows:** Main pipeline (Obsidian → Local Git → GitHub → GitHub Actions → MkDocs Build → GitHub Pages)
-**Solid line also connects:** Local Documentation Automations (Metadata extraction, AI-assisted summary generation) to Local Git Repository
-**Dashed line:** Only connects the Metadata API Endpoint to Local Git Repository
+**Colour key:**
+- **Green:** Content creation (Obsidian Vault)
+- **Blue:** Version control and storage (Local Git, GitHub Repository)
+- **Orange:** Cloud automation (GitHub Actions)
+- **Yellow:** Local manual tools (Local Documentation Automations)
+- **Purple:** Build process (MkDocs Build)
+- **Teal:** Published output (GitHub Pages)
+- **Light blue:** Read-only utility (Metadata API Endpoint)
