@@ -116,9 +116,8 @@ The diagram below shows how the system components connect, from local authoring 
 
 **Colour key:**
 - **Green:** Content creation (Obsidian Vault)
-- **Blue:** Version control and storage (Local Git, GitHub Repository)
+- **Blue:** Version control and storage (Local Git Repository, GitHub Repository)
 - **Orange:** Cloud automation (GitHub Actions)
-- **Yellow:** Local manual tools (Local Documentation Automations)
-- **Purple:** Build process (MkDocs Build)
-- **Teal:** Published output (GitHub Pages)
+- **Yellow:** Build and local tools (MkDocs Build, Local Documentation Automations)
 - **Light blue:** Read-only utility (Metadata API Endpoint)
+- **Teal:** Published output (GitHub Pages)
