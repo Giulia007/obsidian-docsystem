@@ -1,11 +1,12 @@
 ---
 title: Obsidian Documentation System
 created: 2026-03-04T17:43
-updated: 2026-03-15T19:37
+updated: 2026-03-15T19:48
 tags:
 - documentation
 status: published
 ---
+
 # Obsidian Documentation System
 
 This is a documentation portfolio project. I designed and built a small, self-contained documentation system to demonstrate how I think about technical writing — not just the writing itself, but the decisions behind it: how content is structured, what gets automated, and why.
