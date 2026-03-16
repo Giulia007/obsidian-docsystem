@@ -20,3 +20,17 @@ markdown_extensions:
 
 extra_css:
   - styles/custom.css
+
+nav:
+  - Home: index.md
+  - System:
+    - Architecture Overview: system/System Architecture Overview.md
+    - Design Decisions: system/Design Decisions.md
+    - System Conventions: system/System Conventions.md
+    - Documentation Structure MOC: system/Documentation Structure MOC.md
+  - Workflows:
+    - Index Generation: workflows/Index Generation.md
+    - Timestamp Maintenance: workflows/Timestamp Maintenance.md
+    - AI Summary Generation: workflows/AI Summary Generation.md
+  - API:
+    - Metadata API Example: api/Metadata API Example.md
