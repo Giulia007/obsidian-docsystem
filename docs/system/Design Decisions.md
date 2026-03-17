@@ -1,12 +1,13 @@
 ---
 title: Design Decisions
 created: 2026-03-17T12:09
-updated: 2026-03-17T12:09
+updated: 2026-03-17T11:11
 tags:
-  - documentation
-version:
+- documentation
+version: null
 status: published
 ---
+
 # Design Decisions
 
 ## Why These Tools
